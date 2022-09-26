@@ -14,6 +14,7 @@ require (
 	github.com/jackc/pgx/v4 v4.17.2 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
+	github.com/subosito/gotenv v1.4.1 // indirect
 	golang.org/x/crypto v0.0.0-20220919173607-35f4265a4bc0 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	gorm.io/datatypes v1.0.7 // indirect

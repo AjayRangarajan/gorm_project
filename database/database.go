@@ -1,19 +1,20 @@
 package database
 
 import (
-	"fmt"
 	"gorm_project/models"
+	"log"
+	"os"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
 func Db() *gorm.DB {
-	dsn := "host=localhost user=postgres password=root dbname=gorm_project port=5432 sslmode=disable TimeZone=Asia/Shanghai"
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
+	dsn := os.Getenv("DSN")
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
-		fmt.Println(err)
+		log.Panic(err)
 	}
 
 	db.AutoMigrate(&models.Company{})
