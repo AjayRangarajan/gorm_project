@@ -8,11 +8,21 @@ import (
 
 type Company struct {
 	gorm.Model
-	Id            int `gorm:"primaryKey;autoIncrement:true"`
-	Name          string
-	URL           string
-	EmployeeCount int
-	LinkedInURL   string
+	Id            int    `gorm:"primaryKey;autoIncrement:true"`
+	Name          string `gorm:"type:text" json:"name"`
+	URL           string `gorm:"type:text" json:"url"`
+	EmployeeCount int    `gorm:"type:int" json:"employee_count"`
+	LinkedInURL   string `gorm:"type:text" json:"linkedin_url"`
+}
+
+func GetCompany() Company {
+	var company Company
+	return company
+}
+
+func GetCompanies() []Company {
+	var companies []Company
+	return companies
 }
 
 type CompanyPhoneNumber struct {
